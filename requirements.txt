@@ -4,6 +4,6 @@ nltk==3.6.1
 scikit-learn==0.24.1
 
 Flask==2.2.4
-markupsafe==2.0.1
+markupsafe==2.1.1
 flasgger
 

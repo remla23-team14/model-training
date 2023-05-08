@@ -17,3 +17,5 @@ pip install -r requirements.txt
 ```
 $ python3 src/train.py
 ```
+
+The trained model is stored as c2_Classifier_Sentiment_Model and the BoW dictionary (used in preprocessing data during inference) is stored as c1_BoW_Sentiment_Model.pkl 

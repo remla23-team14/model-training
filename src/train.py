@@ -5,6 +5,7 @@ from sklearn.naive_bayes import GaussianNB
 import joblib
 from sklearn.metrics import confusion_matrix, accuracy_score
 import data_preprocessing
+import pickle
 
 dataset = data_preprocessing._load_data()
 X, y = data_preprocessing._transform_data(dataset)
@@ -18,5 +19,8 @@ y_pred = classifier.predict(X_test)
 
 cm = confusion_matrix(y_test, y_pred)
 print(cm)
+
+acc = accuracy_score(y_test, y_pred)
+pickle.dump(acc, open('test_acc.pkl', "wb"))
 
 print(accuracy_score(y_test, y_pred))

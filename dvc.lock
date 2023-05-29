@@ -29,3 +29,22 @@ stages:
     - path: data/processed/pre_processed_dataset.joblib
       md5: 243212bb05cce5e3fdc72bfd2826d329
       size: 31612
+  train:
+    cmd: python3 src/train.py
+    deps:
+    - path: data/processed/c1_BoW_Sentiment_Model.pkl
+      md5: 03d91ee1b15b36e905d1268e5898d855
+      size: 402
+    - path: data/processed/pre_processed_dataset.joblib
+      md5: 243212bb05cce5e3fdc72bfd2826d329
+      size: 31612
+    - path: data/raw/train_dataset.csv
+      md5: 098f672ad137b32db26f7f400bc72a52
+      size: 55284
+    - path: src/train.py
+      md5: a1ba0206139a3e4cb69f88cb877f1ee8
+      size: 1180
+    outs:
+    - path: models/c2_Classifier_Sentiment_Model
+      md5: 2d5a3a7cc92e92406be4edf52dd19be0
+      size: 46215

@@ -14,3 +14,12 @@ stages:
     outs:
     - data/processed/c1_BoW_Sentiment_Model.pkl
     - data/processed/pre_processed_dataset.joblib
+  train:
+    cmd: python3 src/train.py
+    deps:
+    - data/processed/c1_BoW_Sentiment_Model.pkl
+    - data/processed/pre_processed_dataset.joblib
+    - data/raw/train_dataset.csv
+    - src/train.py
+    outs:
+    - models/c2_Classifier_Sentiment_Model

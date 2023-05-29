@@ -42,14 +42,14 @@ stages:
       md5: 098f672ad137b32db26f7f400bc72a52
       size: 55284
     - path: src/train.py
-      md5: fdb1274972fda0df94542ffc02375051
-      size: 1408
+      md5: d4450c2c4d4841a0f16e96f4832af9fc
+      size: 1423
     outs:
     - path: data/processed/XY_data.joblib
       md5: 5a5fc8b7674ebdbcf0cd16626526e7cc
       size: 10231634
     - path: models/c2_Classifier_Sentiment_Model
-      md5: 1d4f5b87055899d0b3169e64b31dd072
+      md5: a07eaf7e8538972c5007f4f4cfc1b28e
       size: 12353827
   evaluate:
     cmd: python3 src/evaluate.py
@@ -58,7 +58,7 @@ stages:
       md5: 5a5fc8b7674ebdbcf0cd16626526e7cc
       size: 10231634
     - path: models/c2_Classifier_Sentiment_Model
-      md5: 1d4f5b87055899d0b3169e64b31dd072
+      md5: a07eaf7e8538972c5007f4f4cfc1b28e
       size: 12353827
     - path: src/evaluate.py
       md5: 2e6be7b4142ec493285c5b65d3ec05ba

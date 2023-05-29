@@ -26,7 +26,7 @@ y = dataset.iloc[:, -1].values
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.20, random_state = 0)
 #classifier = GaussianNB()
-classifier = GaussianProcessClassifier(1.0 * RBF(1.0))
+classifier = GaussianProcessClassifier(1.0 * RBF(1.0),random_state=0)
 classifier.fit(X_train, y_train)
 
 output_path = os.path.join('models', 'c2_Classifier_Sentiment_Model')

@@ -6,6 +6,8 @@ import pandas as pd
 import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB
+from sklearn.gaussian_process.kernels import RBF
+from sklearn.gaussian_process import GaussianProcessClassifier
 
 
 dataset = pd.read_csv(
@@ -23,7 +25,8 @@ y = dataset.iloc[:, -1].values
 
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.20, random_state = 0)
-classifier = GaussianNB()
+#classifier = GaussianNB()
+classifier = GaussianProcessClassifier(1.0 * RBF(1.0))
 classifier.fit(X_train, y_train)
 
 output_path = os.path.join('models', 'c2_Classifier_Sentiment_Model')

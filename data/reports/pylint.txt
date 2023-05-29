@@ -1,14 +1,8 @@
-************* Module src.evaluate
-src/evaluate.py:26:0: C0304: Final newline missing (missing-final-newline)
-src/evaluate.py:5:0: C0411: standard import "import json" should be placed before "import joblib" (wrong-import-order)
-************* Module src.train
-src/train.py:9:0: W0611: Unused confusion_matrix imported from sklearn.metrics (unused-import)
-src/train.py:9:0: W0611: Unused accuracy_score imported from sklearn.metrics (unused-import)
 
 
 Report
 ======
-93 statements analysed.
+92 statements analysed.
 
 Statistics by type
 ------------------
@@ -16,7 +10,7 @@ Statistics by type
 +---------+-------+-----------+-----------+------------+---------+
 |type     |number |old number |difference |%documented |%badname |
 +=========+=======+===========+===========+============+=========+
-|module   |6      |5          |+1.00      |100.00      |0.00     |
+|module   |6      |6          |=          |100.00      |0.00     |
 +---------+-------+-----------+-----------+------------+---------+
 |class    |0      |NC         |NC         |0           |0        |
 +---------+-------+-----------+-----------+------------+---------+
@@ -41,7 +35,7 @@ External dependencies
     sklearn 
       \-feature_extraction 
       | \-text (src.data_preprocessing)
-      \-metrics (src.evaluate,src.train)
+      \-metrics (src.evaluate)
       \-model_selection (src.train)
       \-naive_bayes (src.train)
 
@@ -53,13 +47,13 @@ Raw metrics
 +----------+-------+------+---------+-----------+
 |type      |number |%     |previous |difference |
 +==========+=======+======+=========+===========+
-|code      |110    |59.78 |93       |+17.00     |
+|code      |109    |59.56 |110      |-1.00      |
 +----------+-------+------+---------+-----------+
-|docstring |12     |6.52  |11       |+1.00      |
+|docstring |12     |6.56  |12       |=          |
 +----------+-------+------+---------+-----------+
-|comment   |14     |7.61  |8        |+6.00      |
+|comment   |14     |7.65  |14       |=          |
 +----------+-------+------+---------+-----------+
-|empty     |48     |26.09 |42       |+6.00      |
+|empty     |48     |26.23 |48       |=          |
 +----------+-------+------+---------+-----------+
 
 
@@ -83,11 +77,11 @@ Messages by category
 +-----------+-------+---------+-----------+
 |type       |number |previous |difference |
 +===========+=======+=========+===========+
-|convention |2      |0        |0          |
+|convention |0      |2        |2          |
 +-----------+-------+---------+-----------+
 |refactor   |0      |0        |0          |
 +-----------+-------+---------+-----------+
-|warning    |2      |0        |0          |
+|warning    |0      |2        |2          |
 +-----------+-------+---------+-----------+
 |error      |0      |0        |0          |
 +-----------+-------+---------+-----------+
@@ -97,19 +91,13 @@ Messages by category
 Messages
 --------
 
-+----------------------+------------+
-|message id            |occurrences |
-+======================+============+
-|unused-import         |2           |
-+----------------------+------------+
-|wrong-import-order    |1           |
-+----------------------+------------+
-|missing-final-newline |1           |
-+----------------------+------------+
++-----------+------------+
+|message id |occurrences |
++===========+============+
 
 
 
 
 -------------------------------------------------------------------
-Your code has been rated at 9.57/10 (previous run: 10.00/10, -0.43)
+Your code has been rated at 10.00/10 (previous run: 9.57/10, +0.43)
 

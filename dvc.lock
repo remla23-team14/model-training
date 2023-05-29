@@ -51,3 +51,19 @@ stages:
     - path: models/c2_Classifier_Sentiment_Model
       md5: 2d5a3a7cc92e92406be4edf52dd19be0
       size: 46215
+  evaluate:
+    cmd: python3 src/evaluate.py
+    deps:
+    - path: data/processed/XY_data.joblib
+      md5: 5a5fc8b7674ebdbcf0cd16626526e7cc
+      size: 10231634
+    - path: models/c2_Classifier_Sentiment_Model
+      md5: 2d5a3a7cc92e92406be4edf52dd19be0
+      size: 46215
+    - path: src/evaluate.py
+      md5: b7ee960a7a39150473ec751f749c7dfe
+      size: 773
+    outs:
+    - path: data/output/model_accuracy.json
+      md5: cd6f5fb4cb9281088914cac59ba8be5c
+      size: 32

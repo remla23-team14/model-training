@@ -5,3 +5,8 @@ scikit-learn==1.2.2
 Flask==2.3.2
 markupsafe==2.1.2
 flasgger==0.9.7.1
+pylint==2.12.2
+dslinter
+mllint
+dvc
+dvc-gdrive

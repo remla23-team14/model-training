@@ -42,9 +42,12 @@ stages:
       md5: 098f672ad137b32db26f7f400bc72a52
       size: 55284
     - path: src/train.py
-      md5: a1ba0206139a3e4cb69f88cb877f1ee8
-      size: 1180
+      md5: 450d8748892ac88db7e9de73d7c207bc
+      size: 1301
     outs:
+    - path: data/processed/XY_data.joblib
+      md5: 5a5fc8b7674ebdbcf0cd16626526e7cc
+      size: 10231634
     - path: models/c2_Classifier_Sentiment_Model
       md5: 2d5a3a7cc92e92406be4edf52dd19be0
       size: 46215

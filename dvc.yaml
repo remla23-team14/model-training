@@ -23,3 +23,13 @@ stages:
     - src/train.py
     outs:
     - models/c2_Classifier_Sentiment_Model
+    - data/processed/XY_data.joblib
+  evaluate:
+    cmd: python3 src/evaluate.py
+    deps:
+    - data/processed/XY_data.joblib
+    - models/c2_Classifier_Sentiment_Model
+    - src/evaluate.py
+    metrics:
+    - data/output/model_accuracy.json:
+        cache: false

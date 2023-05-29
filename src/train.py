@@ -6,7 +6,6 @@ import pandas as pd
 import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB
-from sklearn.metrics import confusion_matrix, accuracy_score
 
 
 dataset = pd.read_csv(
@@ -28,15 +27,17 @@ classifier = GaussianNB()
 classifier.fit(X_train, y_train)
 
 output_path = os.path.join('models', 'c2_Classifier_Sentiment_Model')
+d_path = os.path.join('data', 'processed', 'XY_data.joblib')
 joblib.dump(classifier, output_path)
-y_pred = classifier.predict(X_test)
+joblib.dump([X_train, X_test, y_train, y_test], d_path)
+#y_pred = classifier.predict(X_test)
 
-cm = confusion_matrix(y_test, y_pred)
-print(cm)
+#cm = confusion_matrix(y_test, y_pred)
+#print(cm)
 
 #acc = accuracy_score(y_test, y_pred)
 #f = open('test_acc.txt', "w")
 #f.write(str(acc))
 #f.close()
 
-print(accuracy_score(y_test, y_pred))
+#print(accuracy_score(y_test, y_pred))

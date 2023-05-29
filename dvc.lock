@@ -1,0 +1,31 @@
+schema: '2.0'
+stages:
+  get_data:
+    cmd: python3 src/get_data.py
+    deps:
+    - path: data/external/a1_RestaurantReviews_HistoricDump.tsv
+      md5: 102f1f4193e0bdebdd6cce7f13e0a839
+      size: 54686
+    - path: src/get_data.py
+      md5: 9ccadb9f07f9389d380259259e7abf4b
+      size: 692
+    outs:
+    - path: data/raw/train_dataset.csv
+      md5: 098f672ad137b32db26f7f400bc72a52
+      size: 55284
+  preprocess:
+    cmd: python3 src/data_preprocessing.py
+    deps:
+    - path: data/raw/train_dataset.csv
+      md5: 098f672ad137b32db26f7f400bc72a52
+      size: 55284
+    - path: src/data_preprocessing.py
+      md5: 3f148ebc42e5d56def4c5887458f6c90
+      size: 1613
+    outs:
+    - path: data/processed/c1_BoW_Sentiment_Model.pkl
+      md5: 03d91ee1b15b36e905d1268e5898d855
+      size: 402
+    - path: data/processed/pre_processed_dataset.joblib
+      md5: 243212bb05cce5e3fdc72bfd2826d329
+      size: 31612

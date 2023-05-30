@@ -7,8 +7,8 @@ stages:
       md5: 102f1f4193e0bdebdd6cce7f13e0a839
       size: 54686
     - path: src/get_data.py
-      md5: 9ccadb9f07f9389d380259259e7abf4b
-      size: 692
+      md5: 0871e1db5c8f3398779e91093ac3a6ef
+      size: 688
     outs:
     - path: data/raw/train_dataset.csv
       md5: 098f672ad137b32db26f7f400bc72a52
@@ -20,10 +20,10 @@ stages:
       md5: 098f672ad137b32db26f7f400bc72a52
       size: 55284
     - path: src/data_preprocessing.py
-      md5: 3f148ebc42e5d56def4c5887458f6c90
-      size: 1613
+      md5: 2a86481490bb2e47c2a783272b11e3f9
+      size: 1773
     outs:
-    - path: data/processed/c1_BoW_Sentiment_Model.pkl
+    - path: data/processed/c1_BoW_Sentiment_Model.joblib
       md5: 03d91ee1b15b36e905d1268e5898d855
       size: 402
     - path: data/processed/pre_processed_dataset.joblib
@@ -32,7 +32,7 @@ stages:
   train:
     cmd: python3 src/train.py
     deps:
-    - path: data/processed/c1_BoW_Sentiment_Model.pkl
+    - path: data/processed/c1_BoW_Sentiment_Model.joblib
       md5: 03d91ee1b15b36e905d1268e5898d855
       size: 402
     - path: data/processed/pre_processed_dataset.joblib
@@ -42,27 +42,27 @@ stages:
       md5: 098f672ad137b32db26f7f400bc72a52
       size: 55284
     - path: src/train.py
-      md5: b29bc67650102085542d3e5afc1bcc09
-      size: 1424
+      md5: ce0fcf54387df4c8e54b0023e8c2b04e
+      size: 1493
     outs:
     - path: data/processed/XY_data.joblib
-      md5: 5a5fc8b7674ebdbcf0cd16626526e7cc
-      size: 10231634
+      md5: cbca21ce1e2503a23696f00bfc94ed84
+      size: 10231586
     - path: models/c2_Classifier_Sentiment_Model
-      md5: a07eaf7e8538972c5007f4f4cfc1b28e
-      size: 12353827
+      md5: 3c5bfb04bda2d533046e573176319cfc
+      size: 12353795
   evaluate:
     cmd: python3 src/evaluate.py
     deps:
     - path: data/processed/XY_data.joblib
-      md5: 5a5fc8b7674ebdbcf0cd16626526e7cc
-      size: 10231634
+      md5: cbca21ce1e2503a23696f00bfc94ed84
+      size: 10231586
     - path: models/c2_Classifier_Sentiment_Model
-      md5: a07eaf7e8538972c5007f4f4cfc1b28e
-      size: 12353827
+      md5: 3c5bfb04bda2d533046e573176319cfc
+      size: 12353795
     - path: src/evaluate.py
-      md5: 2e6be7b4142ec493285c5b65d3ec05ba
-      size: 778
+      md5: 7dd8f68396f1768ebb4a246859c66c2e
+      size: 809
     outs:
     - path: data/output/model_accuracy.json
       md5: a54c46bf2a0e2ad159eba57f1c33f5fb

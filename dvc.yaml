@@ -12,12 +12,12 @@ stages:
     - data/raw/train_dataset.csv
     - src/data_preprocessing.py
     outs:
-    - data/processed/c1_BoW_Sentiment_Model.pkl
+    - data/processed/c1_BoW_Sentiment_Model.joblib
     - data/processed/pre_processed_dataset.joblib
   train:
     cmd: python3 src/train.py
     deps:
-    - data/processed/c1_BoW_Sentiment_Model.pkl
+    - data/processed/c1_BoW_Sentiment_Model.joblib
     - data/processed/pre_processed_dataset.joblib
     - data/raw/train_dataset.csv
     - src/train.py

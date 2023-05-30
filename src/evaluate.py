@@ -1,13 +1,14 @@
 """Evaluates the trained classifier and stores the metrics"""
 
-import os
 import json
-import joblib
-from sklearn.metrics import accuracy_score, confusion_matrix
+import os
+
+import joblib  # type: ignore
+from sklearn.metrics import accuracy_score, confusion_matrix  # type: ignore
 
 # Load data and model
-c_path = os.path.join('models', 'c2_Classifier_Sentiment_Model')
-d_path = os.path.join('data', 'processed', 'XY_data.joblib')
+c_path = os.path.join("models", "c2_Classifier_Sentiment_Model")
+d_path = os.path.join("data", "processed", "XY_data.joblib")
 [X_train, X_test, y_train, y_test] = joblib.load(d_path)
 classifier = joblib.load(c_path)
 
@@ -21,7 +22,6 @@ print(cm)
 print(accuracy_score)
 
 acc_dict = {"accuracy": accuracy_score}
-out_path = os.path.join('data','output','model_accuracy.json')
+out_path = os.path.join("data", "output", "model_accuracy.json")
 with open(out_path, "w", encoding="utf8") as f_out:
     json.dump(acc_dict, f_out)
-    

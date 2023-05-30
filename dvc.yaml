@@ -31,5 +31,5 @@ stages:
     - models/c2_Classifier_Sentiment_Model
     - src/evaluate.py
     metrics:
-    - data/output/model_accuracy.json:
+    - data/output/model_metrics.json:
         cache: false

@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "model-training"
+version = "0.1.0"
+description = "The model-training package for REMLA23-team14. Stores the model-training and evaluation pipeline for sentiment analysis on restaurant reviews."
+authors = ["REMLA23-team14"]
+license = "MIT License"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+numpy = "^1.24.3"
+pandas = "^2.0.1"
+nltk = "^3.8.1"
+scikit-learn = "^1.2.2"
+Flask = "^2.3.2"
+markupsafe = "^2.1.2"
+flasgger = "^0.9.7.1"
+
+
+[tool.poetry.group.dev.dependencies]
+pylint = "^2.12.2"
+dslinter = "^2.0.9"
+mllint = "^0.12.2"
+dvc = "^2.58.1"
+dvc-gdrive = "^2.19.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -5,7 +5,7 @@ import pickle
 import pandas as pd
 import joblib
 from sklearn.model_selection import train_test_split
-from sklearn.naive_bayes import GaussianNB
+#from sklearn.naive_bayes import GaussianNB
 from sklearn.gaussian_process.kernels import RBF
 from sklearn.gaussian_process import GaussianProcessClassifier
 

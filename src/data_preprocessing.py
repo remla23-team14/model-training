@@ -2,7 +2,6 @@
 Module to preprocess the train dataset and store it in a file"""
 
 import os
-import pickle
 import re
 from typing import List
 
@@ -56,7 +55,7 @@ def main() -> None:
     bow_path = os.path.join("data", "processed", "c1_BoW_Sentiment_Model.joblib")
     corpus_path = os.path.join("data", "processed", "pre_processed_dataset.joblib")
 
-    joblib.dump(cvec,bow_path)
+    joblib.dump(cvec, bow_path)
     joblib.dump(corpus, corpus_path)
 
 

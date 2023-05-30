@@ -1,7 +1,6 @@
 """Module to perform classifier training"""
 
 import os
-import pickle
 
 import joblib  # type: ignore
 import pandas as pd

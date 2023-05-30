@@ -2,34 +2,34 @@ Linting project at  /home/ayushkulshresh/Documents/TUDelft/Q4/REMLA/assignments/
 Using configuration from pyproject.toml (default: true)
 ---
 
-🏃 Running - Dependency Management (0.04 ms)
-🏃 Running - Continuous Integration (CI) (0.19 ms)
-🏃 Running - Code Quality (0.20 ms)
-🏃 Running - Testing (0.21 ms)
-🏃 Running - Version Control (0.22 ms)
+🏃 Running - Version Control (0.03 ms)
+🏃 Running - Dependency Management (0.07 ms)
+🏃 Running - Continuous Integration (CI) (0.07 ms)
+🏃 Running - Code Quality (0.07 ms)
+🏃 Running - Testing (0.08 ms)
+✔️ Done - Testing (0.11 ms)
 🏃 Running - Version Control - Git (0.02 ms)
-✔️ Done - Dependency Management (0.43 ms)
-🏃 Running - Version Control - DVC (0.05 ms)
-⏳ Waiting - Version Control (0.45 ms)
-✔️ Done - Testing (0.47 ms)
-🏃 Running - Code Quality - Pylint (0.02 ms)
-🏃 Running - Code Quality - Mypy (0.16 ms)
-🏃 Running - Code Quality - Black (0.17 ms)
-⏳ Waiting - Code Quality (0.89 ms)
-🏃 Running - Code Quality - isort (0.19 ms)
-🏃 Running - Code Quality - Bandit (0.19 ms)
-✔️ Done - Continuous Integration (CI) (13 ms)
-✔️ Done - Version Control - Git (13 ms)
-✔️ Done - Code Quality - isort (207 ms)
-✔️ Done - Code Quality - Black (251 ms)
-✔️ Done - Code Quality - Bandit (394 ms)
-✔️ Done - Version Control - DVC (1.38 s)
-✔️ Done - Version Control (1.38 s)
-🏃 Running - Version Control (1.38 s)
-✔️ Done - Code Quality - Mypy (3.14 s)
-✔️ Done - Code Quality - Pylint (12.10 s)
-🏃 Running - Code Quality (12.10 s)
-✔️ Done - Code Quality (12.10 s)
+🏃 Running - Version Control - DVC (0.03 ms)
+✔️ Done - Dependency Management (0.23 ms)
+⏳ Waiting - Version Control (0.24 ms)
+🏃 Running - Code Quality - Pylint (0.01 ms)
+🏃 Running - Code Quality - Mypy (0.01 ms)
+🏃 Running - Code Quality - Black (0.01 ms)
+⏳ Waiting - Code Quality (0.25 ms)
+🏃 Running - Code Quality - isort (0.01 ms)
+🏃 Running - Code Quality - Bandit (0.02 ms)
+✔️ Done - Continuous Integration (CI) (10 ms)
+✔️ Done - Version Control - Git (10 ms)
+✔️ Done - Code Quality - isort (141 ms)
+✔️ Done - Code Quality - Black (186 ms)
+✔️ Done - Code Quality - Bandit (231 ms)
+✔️ Done - Version Control - DVC (889 ms)
+🏃 Running - Version Control (890 ms)
+✔️ Done - Version Control (890 ms)
+✔️ Done - Code Quality - Mypy (2.12 s)
+✔️ Done - Code Quality - Pylint (8.66 s)
+✔️ Done - Code Quality (8.66 s)
+🏃 Running - Code Quality (8.66 s)
 
 ✔️ All done!
 
@@ -41,7 +41,7 @@ Using configuration from pyproject.toml (default: true)
 ┌──────────────────────┬──────────────────────────────────────────────────────────────────────────┐
 │[1mProject[0m               │[1mDetails[0m                                                                   │
 ╞══════════════════════╪══════════════════════════════════════════════════════════════════════════╡
-│Date                  │Tue, 30 May 2023 03:09:03 +0200                                           │
+│Date                  │Tue, 30 May 2023 12:13:16 +0200                                           │
 ├──────────────────────┼──────────────────────────────────────────────────────────────────────────┤
 │Path                  │/home/ayushkulshresh/Documents/TUDelft/Q4/REMLA/assignments/model-training│
 ├──────────────────────┼──────────────────────────────────────────────────────────────────────────┤
@@ -51,15 +51,15 @@ Using configuration from pyproject.toml (default: true)
 ├──────────────────────┼──────────────────────────────────────────────────────────────────────────┤
 │Git: Remote URL       │git@github.com:remla23-team14/model-training.git                          │
 ├──────────────────────┼──────────────────────────────────────────────────────────────────────────┤
-│Git: Commit           │4b681da9eebba30981607fa96d56056ebf3f44a2                                  │
+│Git: Commit           │12a0676df80383c61819250af8bffb0b65a7628f                                  │
 ├──────────────────────┼──────────────────────────────────────────────────────────────────────────┤
 │Git: Branch           │cookiecutter                                                              │
 ├──────────────────────┼──────────────────────────────────────────────────────────────────────────┤
-│Git: Dirty Workspace? │No                                                                        │
+│Git: Dirty Workspace? │Yes                                                                       │
 ├──────────────────────┼──────────────────────────────────────────────────────────────────────────┤
 │Number of Python files│5                                                                         │
 ├──────────────────────┼──────────────────────────────────────────────────────────────────────────┤
-│Lines of Python code  │94                                                                        │
+│Lines of Python code  │108                                                                       │
 └──────────────────────┴──────────────────────────────────────────────────────────────────────────┘
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
@@ -138,11 +138,11 @@ Using configuration from pyproject.toml (default: true)
 1.1.3.1 Details — Project should use code quality linters — ✅
 
 Hooray, all linters detected:
+• Mypy
 • Black
 • isort
 • Bandit
 • Pylint
-• Mypy
 
 1.1.3.2 Details — Pylint reports no issues with this project — ✅
 
@@ -232,4 +232,4 @@ Python test files in there, as per common convention.
 Your project is still lacking in quality and could do with some improvements.
 Use mllint describe with each rule's slug to learn more about what you can do to get the rules to pass and improve the quality of your ML project.
 
-took: 12.115823187s
+took: 8.67125552s

@@ -4,7 +4,10 @@ import json
 import os
 
 import joblib  # type: ignore
-from sklearn.metrics import accuracy_score, confusion_matrix, precision_score, recall_score  # type: ignore
+from sklearn.metrics import accuracy_score, \
+    confusion_matrix, \
+    precision_score, \
+    recall_score  # type: ignore
 
 # Load data and model
 c_path = os.path.join("models", "c2_Classifier_Sentiment_Model")

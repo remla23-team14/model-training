@@ -32,6 +32,9 @@ The complete model training pipeline and version control for datasets are manage
 3. The model training pipeline produces a model_metrics.json file that stores the accuracy score, precision and recall for the training and test datasets. Use `poetry run dvc metrics show` to view the metrics.
 4. `$poetry run dvc metrics diff` shows the change in metrics across an experiment.
 
+NOTE: If you run into missing file errors when doing `poetry run dvc pull`, you might need to do `poetry run dvc fetch` individually for the files. Alternatively, you can run `poetry run dvc data status --json | jq '.not_in_cache[]' | xargs -L1 -I'{}' poetry run dvc fetch '{}'`
+
+
 ## 3. Code quality
 
 3.1 Pylint

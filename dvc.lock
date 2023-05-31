@@ -1,0 +1,69 @@
+schema: '2.0'
+stages:
+  get_data:
+    cmd: python3 src/get_data.py
+    deps:
+    - path: data/external/a1_RestaurantReviews_HistoricDump.tsv
+      md5: 102f1f4193e0bdebdd6cce7f13e0a839
+      size: 54686
+    - path: src/get_data.py
+      md5: 0871e1db5c8f3398779e91093ac3a6ef
+      size: 688
+    outs:
+    - path: data/raw/train_dataset.csv
+      md5: 098f672ad137b32db26f7f400bc72a52
+      size: 55284
+  preprocess:
+    cmd: python3 src/data_preprocessing.py
+    deps:
+    - path: data/raw/train_dataset.csv
+      md5: 098f672ad137b32db26f7f400bc72a52
+      size: 55284
+    - path: src/data_preprocessing.py
+      md5: 7c72822a5c842e05dd1cfa7bb8bd3203
+      size: 1760
+    outs:
+    - path: data/processed/c1_BoW_Sentiment_Model.joblib
+      md5: 03d91ee1b15b36e905d1268e5898d855
+      size: 402
+    - path: data/processed/pre_processed_dataset.joblib
+      md5: 243212bb05cce5e3fdc72bfd2826d329
+      size: 31612
+  train:
+    cmd: python3 src/train.py
+    deps:
+    - path: data/processed/c1_BoW_Sentiment_Model.joblib
+      md5: 03d91ee1b15b36e905d1268e5898d855
+      size: 402
+    - path: data/processed/pre_processed_dataset.joblib
+      md5: 243212bb05cce5e3fdc72bfd2826d329
+      size: 31612
+    - path: data/raw/train_dataset.csv
+      md5: 098f672ad137b32db26f7f400bc72a52
+      size: 55284
+    - path: src/train.py
+      md5: f2c492064de3d76dccb339b0d9804a03
+      size: 1479
+    outs:
+    - path: data/processed/XY_data.joblib
+      md5: cbca21ce1e2503a23696f00bfc94ed84
+      size: 10231586
+    - path: models/c2_Classifier_Sentiment_Model
+      md5: 3c5bfb04bda2d533046e573176319cfc
+      size: 12353795
+  evaluate:
+    cmd: python3 src/evaluate.py
+    deps:
+    - path: data/processed/XY_data.joblib
+      md5: cbca21ce1e2503a23696f00bfc94ed84
+      size: 10231586
+    - path: models/c2_Classifier_Sentiment_Model
+      md5: 3c5bfb04bda2d533046e573176319cfc
+      size: 12353795
+    - path: src/evaluate.py
+      md5: 217c893e156cdd5d3d0afda18aa46d42
+      size: 1565
+    outs:
+    - path: data/output/model_metrics.json
+      md5: 76bffc4fcf0374d00f8278f632eafd43
+      size: 212

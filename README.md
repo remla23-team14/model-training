@@ -1,29 +1,51 @@
 # model-training
 
+Contains the model training pipeline used for sentiment analysis on restaurant reviews. Developed as a part of CS4295 Release Engineering for Machine Learning Applications course.
 
-1. Visualizing the data
+The repository is structured according to the cookiecutter template.
+
+## 1. Getting started
+
+### 1.1 Requirements
+
+Make sure you have the following dependencies installed:
+
+- Python 3.8
+- Poetry 
+
+Navigate https://python-poetry.org/docs/#installation for instructions on how to set up poetry.
+
+### 1.2 Using Poetry
+
+
+
+1. Resolving dependencies: Whilst in project directory, run `poetry install` to resolve dependencies
+2. Check the python version used with virtual env: `poetry env info`. If needed change python version with `poetry env use python3.8` and re-run step 1.
+
+
+## 2. DVC Pipeline
+
+The complete model training pipeline and version control for datasets are managed by DVC, and a remote storage has been configured. 
+
+1. Run `poetry run dvc pull` to synchronize the dataset files from the remote repository.
+2. Executing `poetry run dvc repro` reproduces the model-training pipeline, which consits of 4 stages: get_data, preprocess, train and evaluate.
+3. The model training pipeline produces a model_metrics.json file that stores the accuracy score, precision and recall for the training and test datasets. Use `poetry run dvc metrics show` to view the metrics.
+4. `$poetry run dvc metrics diff` shows the change in metrics across an experiment.
+
+## 3. Code quality
+
+3.1 Pylint
+
+Pylint has been configured to use the DSLinter plugin (https://github.com/SERG-Delft/dslinter). A pylint summary report can be found in `data/reports/pylint.txt`
 
 ```
-$ python3 src/read_data.py
-```
-2. Install dependencies
-
-```
-pip install -r requirements.txt
+poetry run pylint src
 ```
 
-3. Running the model training & inference steps
+3.2 mllint
+
+The code quality is also audited using mllint (https://github.com/bvobart/mllint). An mllint summary report can be found in `data/reports/mllint.txt`
 
 ```
-$ python3 src/train.py
+poetry run mllint 
 ```
-
-The trained model is stored as c2_Classifier_Sentiment_Model and the BoW dictionary (used in preprocessing data during inference) is stored as c1_BoW_Sentiment_Model.pkl 
-
-Training results:
-
-accuracy: 72.77%
-
-Confusion matrix: 
-[[67 11]
- [38 64]]

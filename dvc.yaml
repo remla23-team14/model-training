@@ -1,0 +1,35 @@
+stages:
+  get_data:
+    cmd: python3 src/get_data.py
+    deps:
+    - data/external/a1_RestaurantReviews_HistoricDump.tsv
+    - src/get_data.py
+    outs:
+    - data/raw/train_dataset.csv
+  preprocess:
+    cmd: python3 src/data_preprocessing.py
+    deps:
+    - data/raw/train_dataset.csv
+    - src/data_preprocessing.py
+    outs:
+    - data/processed/c1_BoW_Sentiment_Model.joblib
+    - data/processed/pre_processed_dataset.joblib
+  train:
+    cmd: python3 src/train.py
+    deps:
+    - data/processed/c1_BoW_Sentiment_Model.joblib
+    - data/processed/pre_processed_dataset.joblib
+    - data/raw/train_dataset.csv
+    - src/train.py
+    outs:
+    - models/c2_Classifier_Sentiment_Model
+    - data/processed/XY_data.joblib
+  evaluate:
+    cmd: python3 src/evaluate.py
+    deps:
+    - data/processed/XY_data.joblib
+    - models/c2_Classifier_Sentiment_Model
+    - src/evaluate.py
+    metrics:
+    - data/output/model_metrics.json:
+        cache: false

@@ -15,7 +15,6 @@ scikit-learn = "^1.2.2"
 Flask = "^2.3.2"
 markupsafe = "^2.1.2"
 flasgger = "^0.9.7.1"
-pytest = "^7.3.1"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -28,9 +27,13 @@ mypy = "^0.931"
 isort = "^5.12.0"
 black = "^23.3.0"
 bandit = "^1.7.5"
+pytest = "^7.3.1"
 
 [tool.isort]
 profile = "black"
+
+[tool.bandit.assert_used]
+skips = ['*_test.py', '*/test_*.py']
 
 [build-system]
 requires = ["poetry-core"]

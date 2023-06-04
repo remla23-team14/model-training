@@ -7,8 +7,8 @@ stages:
       md5: 102f1f4193e0bdebdd6cce7f13e0a839
       size: 54686
     - path: src/get_data.py
-      md5: 0871e1db5c8f3398779e91093ac3a6ef
-      size: 688
+      md5: 9b89e8b6c4cd81ff7e037f01a737cd75
+      size: 1068
     outs:
     - path: data/raw/train_dataset.csv
       md5: 098f672ad137b32db26f7f400bc72a52
@@ -61,8 +61,8 @@ stages:
       md5: 3c5bfb04bda2d533046e573176319cfc
       size: 12353795
     - path: src/evaluate.py
-      md5: 217c893e156cdd5d3d0afda18aa46d42
-      size: 1565
+      md5: 0dbacef6f8725be38139ddfc15254fc6
+      size: 1400
     outs:
     - path: data/output/model_metrics.json
       md5: 76bffc4fcf0374d00f8278f632eafd43

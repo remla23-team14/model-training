@@ -28,8 +28,7 @@ ignore-paths=
 
 # Files or directories matching the regex patterns are skipped. The regex
 # matches against base names, not paths.
-ignore-patterns=
-
+ignore-patterns=(.)*_test\.py,test_(.)*\.py
 # Python code to execute, usually for sys.path manipulation such as
 # pygtk.require().
 #init-hook=
@@ -402,7 +401,11 @@ good-names=i,
            f,
            ex,
            Run,
-           _
+           X,
+           y,
+           X_train,
+           X_test,
+           X_in
 
 # Good variable names regexes, separated by a comma. If names match any regex,
 # they will always be accepted

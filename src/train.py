@@ -3,37 +3,59 @@
 import os
 
 import joblib  # type: ignore
+import numpy as np
 import pandas as pd
 from sklearn.gaussian_process import GaussianProcessClassifier  # type: ignore
 
 # from sklearn.naive_bayes import GaussianNB # type: ignore
 from sklearn.gaussian_process.kernels import RBF  # type: ignore
+from sklearn.metrics import accuracy_score  # type: ignore
 from sklearn.model_selection import train_test_split  # type: ignore
 
-dataset = pd.read_csv(
+np.random.seed(0)
+
+train_dataset = pd.read_csv(
     os.path.join("data", "raw", "train_dataset.csv"),
     dtype={"Review": object, "Liked": int},
 )
-dataset = dataset[["Review", "Liked"]]
-
-corpus = joblib.load(os.path.join("data", "processed", "pre_processed_dataset.joblib"))
-cv = joblib.load(os.path.join("data", "processed", "c1_BoW_Sentiment_Model.joblib"))
-
-X = cv.fit_transform(corpus).toarray()
-y = dataset.iloc[:, -1].values
+train_dataset = train_dataset[["Review", "Liked"]]
 
 
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.20, random_state=0
-)
-# classifier = GaussianNB()
-classifier = GaussianProcessClassifier(1.0 * RBF(1.0), random_state=0)
-classifier.fit(X_train, y_train)
+def train_pipeline(dataset: pd.DataFrame, seed: int) -> float:
+    """Function to run model training"""
 
-output_path = os.path.join("models", "c2_Classifier_Sentiment_Model")
-d_path = os.path.join("data", "processed", "XY_data.joblib")
-joblib.dump(classifier, output_path)
-joblib.dump([X_train, X_test, y_train, y_test], d_path)
+    corpus = joblib.load(
+        os.path.join("data", "processed", "pre_processed_dataset.joblib")
+    )
+    train_cv = joblib.load(
+        os.path.join("data", "processed", "c1_BoW_Sentiment_Model.joblib")
+    )
+
+    X = train_cv.fit_transform(corpus).toarray()
+    y = dataset.iloc[:, -1].values
+
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.20, random_state=seed
+    )
+    # classifier = GaussianNB()
+    classifier = GaussianProcessClassifier(1.0 * RBF(1.0), random_state=seed)
+    classifier.fit(X_train, y_train)
+
+    output_path = os.path.join("models", "c2_Classifier_Sentiment_Model")
+    d_path = os.path.join("data", "processed", "XY_data.joblib")
+    joblib.dump(classifier, output_path)
+    joblib.dump([X_train, X_test, y_train, y_test], d_path)
+
+    y_pred = classifier.predict(X_test)
+
+    acc = accuracy_score(y_test, y_pred)
+
+    return acc
+
+
+if __name__ == "__main__":
+    train_acc = train_pipeline(train_dataset, seed=0)
+
 # y_pred = classifier.predict(X_test)
 
 # cm = confusion_matrix(y_test, y_pred)

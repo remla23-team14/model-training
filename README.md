@@ -52,3 +52,9 @@ The code quality is also audited using mllint (https://github.com/bvobart/mllint
 ```
 poetry run mllint 
 ```
+
+## 4. Testing
+
+```
+poetry run pytest
+```

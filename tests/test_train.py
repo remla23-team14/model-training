@@ -1,14 +1,15 @@
 import numpy as np
 import pytest
+import libpy
 
-from src.data_preprocessing import _load_data
+from src.data_preprocessing import train_dataset_path
 from src.train import train_pipeline
 
 
 @pytest.fixture()
 def train_dataset():
     # This fixture provides the train dataset for testing
-    dataset = _load_data()  # Load or generate the train dataset
+    dataset = libpy.load_data(train_dataset_path)  # Load or generate the train dataset
     yield dataset
 
 

@@ -15,6 +15,7 @@ scikit-learn = "^1.2.2"
 Flask = "^2.3.2"
 markupsafe = "^2.1.2"
 flasgger = "^0.9.7.1"
+libpy = {git = "https://github.com/remla23-team14/libpy"}
 
 
 [tool.poetry.group.dev.dependencies]

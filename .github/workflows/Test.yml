@@ -1,0 +1,31 @@
+name: Python Tests
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python 
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
+      - name: Run image
+        uses: abatilo/actions-poetry@v2
+        with:
+          poetry-version: "1.5.1"
+      - name: Install dependencies
+        run: |
+            poetry install
+      - name: Dvc repro
+        run: |
+          poetry run dvc pull
+          poetry run dvc repro
+      - name: Code Quality
+        run: |
+          poetry run pylint src
+          poetry run mllint
+      - name: Test with pytest
+        run: |
+            poetry run pytest

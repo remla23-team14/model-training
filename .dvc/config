@@ -1,5 +1,4 @@
 [core]
-    remote = mydrive
-['remote "mydrive"']
-    url = gdrive://1KP2_DdpAKLKYOjuea7tyhH8TWLW0w_dy
-    gdrive_acknowledge_abuse = true
+    remote = gcp
+['remote "gcp"']
+    url = gs://remla23-team14-dvc

@@ -18,6 +18,15 @@ jobs:
       - name: Install dependencies
         run: |
             poetry install
+      - name: Dvc repro
+        run: |
+          poetry run dvc pull
+          poetry run dvc repro
+          poetry run dvc metrics
+      - name: Code Quality
+        run: |
+          poetry run pylint src
+          poetry run mllint
       - name: Test with pytest
         run: |
             poetry run pytest

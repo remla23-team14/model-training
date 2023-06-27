@@ -5,16 +5,14 @@ import os
 import pathlib
 
 import joblib  # type: ignore
+import libpy  # type: ignore
 import nltk  # type: ignore
-import libpy
-from nltk.corpus import stopwords  # type: ignore
-from nltk.stem.porter import PorterStemmer  # type: ignore
 from sklearn.feature_extraction.text import CountVectorizer  # type: ignore
 
 nltk.download("stopwords")
 
 
-train_dataset_path = pathlib.Path('data') / 'raw' / 'train_dataset.csv'
+train_dataset_path = pathlib.Path("data") / "raw" / "train_dataset.csv"
 
 
 def main() -> None:

@@ -20,8 +20,8 @@ stages:
       md5: 098f672ad137b32db26f7f400bc72a52
       size: 55284
     - path: src/data_preprocessing.py
-      md5: 6a83f66808239eeb0646c591a05c2a2e
-      size: 939
+      md5: eaf960df7484e3ff6e3d0ad807b19acf
+      size: 830
     outs:
     - path: data/processed/c1_BoW_Sentiment_Model.joblib
       md5: 03d91ee1b15b36e905d1268e5898d855

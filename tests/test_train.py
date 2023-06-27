@@ -1,6 +1,6 @@
+import libpy
 import numpy as np
 import pytest
-import libpy
 
 from src.data_preprocessing import train_dataset_path
 from src.train import train_pipeline

@@ -15,6 +15,7 @@ scikit-learn = "^1.2.2"
 Flask = "^2.3.2"
 markupsafe = "^2.1.2"
 flasgger = "^0.9.7.1"
+libpy = {git = "https://github.com/remla23-team14/libpy"}
 
 
 [tool.poetry.group.dev.dependencies]
@@ -22,13 +23,13 @@ pylint = "^2.12.2"
 dslinter = "^2.0.9"
 mllint = "^0.12.2"
 dvc = "^2.58.1"
-dvc-gdrive = "^2.19.2"
 mypy = "^0.931"
 isort = "^5.12.0"
 black = "^23.3.0"
 bandit = "^1.7.5"
 pytest = "^7.3.1"
 pytest-cov = "^4.1.0"
+dvc-gs = "^2.22.1"
 
 [tool.isort]
 profile = "black"

@@ -22,7 +22,6 @@ jobs:
         run: |
           poetry run dvc pull
           poetry run dvc repro
-          poetry run dvc metrics
       - name: Code Quality
         run: |
           poetry run pylint src

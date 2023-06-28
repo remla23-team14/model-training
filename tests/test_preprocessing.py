@@ -10,7 +10,7 @@ from src import data_preprocessing
 
 def test_load_data():
     # Define the path to the test dataset
-    test_dataset_path = os.path.join("data", "test", "test_dataset.csv")
+    test_dataset_path = os.path.join("data", "test_dataset.csv")
 
     # Create a test dataset
     test_dataset = pd.DataFrame(
@@ -35,7 +35,7 @@ def test_load_data():
 
 def test_main():
     # Define the test dataset path
-    test_dataset_path = os.path.join("data", "test", "test_dataset.csv")
+    test_dataset_path = os.path.join("data", "test_dataset.csv")
 
     # Create a test dataset
     test_dataset = pd.DataFrame(

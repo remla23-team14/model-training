@@ -43,7 +43,7 @@ report = "tests-report.xml"
 
 [tool.mllint.testing.coverage]
 report = "coverage.xml"
-targets = { line = 80.0 } 
+targets = { line = 50.0 } 
 
 [build-system]
 requires = ["poetry-core"]

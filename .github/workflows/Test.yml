@@ -28,4 +28,8 @@ jobs:
           poetry run mllint
       - name: Test with pytest
         run: |
-            poetry run pytest
+            poetry run pytest --cov-report "xml:coverage.xml" --cov=src tests/
+      - name: Pytest coverage comment
+        uses: MishaKav/pytest-coverage-comment@main
+        with:
+           pytest-xml-coverage-path: ./coverage.xml

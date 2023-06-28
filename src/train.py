@@ -1,6 +1,7 @@
 """Module to perform classifier training"""
 
 import os
+from typing import Any
 
 import joblib  # type: ignore
 import numpy as np
@@ -21,7 +22,7 @@ train_dataset = pd.read_csv(
 train_dataset = train_dataset[["Review", "Liked"]]
 
 
-def train_pipeline(dataset: pd.DataFrame, seed: int) -> float:
+def train_pipeline(dataset: pd.DataFrame, seed: int) -> Any:
     """Function to run model training"""
 
     corpus = joblib.load(
@@ -54,7 +55,7 @@ def train_pipeline(dataset: pd.DataFrame, seed: int) -> float:
 
 
 if __name__ == "__main__":
-    train_acc = train_pipeline(train_dataset, seed=0)
+    train_acc = train_pipeline(train_dataset, seed=2)
 
 # y_pred = classifier.predict(X_test)
 

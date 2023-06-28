@@ -1,23 +1,8 @@
 """Tests for get_data.py function
 """
-import os
-
 import pandas as pd
-import pytest
 
 from src.get_data import read_data
-
-
-@pytest.fixture()
-def data_file_path():
-    """File path"""
-    yield os.path.join("data", "external", "a1_RestaurantReviews_HistoricDump.tsv")
-
-
-@pytest.fixture()
-def output_file_path():
-    """Output path"""
-    yield os.path.join("data", "raw", "train_dataset.csv")
 
 
 def test_data_retrieval(data_file_path):

@@ -30,6 +30,7 @@ bandit = "^1.7.5"
 pytest = "^7.3.1"
 pytest-cov = "^4.1.0"
 dvc-gs = "^2.22.1"
+pytest-benchmark = "^4.0.0"
 
 [tool.isort]
 profile = "black"

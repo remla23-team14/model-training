@@ -54,7 +54,7 @@ poetry run mllint
 
 ## 4. Testing
 
-We use the pytest testing framework to run numerous unit tests against our code:
+We use the pytest testing framework to run numerous unit tests against our code. The test coverage report is available as a coverage.xml file.
 
 ```
 poetry run pytest

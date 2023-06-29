@@ -59,9 +59,3 @@ We use the pytest testing framework to run numerous unit tests against our code:
 ```
 poetry run pytest
 ```
-
-## 4. Testing
-
-```
-poetry run pytest
-```

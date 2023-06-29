@@ -403,6 +403,8 @@ good-names=i,
            Run,
            X,
            y,
+           Y,
+           cm,
            X_train,
            X_test,
            X_in
